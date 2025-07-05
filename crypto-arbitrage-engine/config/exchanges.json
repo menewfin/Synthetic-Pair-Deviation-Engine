@@ -1,0 +1,135 @@
+{
+    "exchanges": [
+        {
+            "name": "OKX",
+            "enabled": true,
+            "ws_endpoints": {
+                "public": "wss://ws.okx.com:8443/ws/v5/public",
+                "business": "wss://ws.okx.com:8443/ws/v5/business"
+            },
+            "rest_endpoint": "https://www.okx.com",
+            "symbols": {
+                "spot": [
+                    "BTC-USDT",
+                    "ETH-USDT",
+                    "SOL-USDT",
+                    "MATIC-USDT"
+                ],
+                "perpetual": [
+                    "BTC-USDT-SWAP",
+                    "ETH-USDT-SWAP",
+                    "SOL-USDT-SWAP"
+                ],
+                "futures": [
+                    "BTC-USD-231229",
+                    "ETH-USD-231229"
+                ]
+            },
+            "instrument_types": ["SPOT", "PERPETUAL", "FUTURES"],
+            "reconnect_interval_ms": 5000,
+            "heartbeat_interval_ms": 30000,
+            "rate_limits": {
+                "ws_connections_per_ip": 20,
+                "messages_per_second": 100
+            }
+        },
+        {
+            "name": "BINANCE",
+            "enabled": true,
+            "ws_endpoints": {
+                "spot": "wss://stream.binance.com:9443/ws",
+                "futures": "wss://fstream.binance.com/ws"
+            },
+            "rest_endpoint": "https://api.binance.com",
+            "symbols": {
+                "spot": [
+                    "BTCUSDT",
+                    "ETHUSDT",
+                    "SOLUSDT",
+                    "MATICUSDT"
+                ],
+                "perpetual": [
+                    "BTCUSDT",
+                    "ETHUSDT",
+                    "SOLUSDT"
+                ],
+                "futures": [
+                    "BTCUSDT_231229",
+                    "ETHUSDT_231229"
+                ]
+            },
+            "instrument_types": ["SPOT", "PERPETUAL", "FUTURES"],
+            "reconnect_interval_ms": 5000,
+            "heartbeat_interval_ms": 180000,
+            "rate_limits": {
+                "ws_connections_per_ip": 5,
+                "messages_per_second": 100
+            }
+        },
+        {
+            "name": "BYBIT",
+            "enabled": true,
+            "ws_endpoints": {
+                "spot": "wss://stream.bybit.com/v5/public/spot",
+                "linear": "wss://stream.bybit.com/v5/public/linear",
+                "inverse": "wss://stream.bybit.com/v5/public/inverse"
+            },
+            "rest_endpoint": "https://api.bybit.com",
+            "symbols": {
+                "spot": [
+                    "BTCUSDT",
+                    "ETHUSDT",
+                    "SOLUSDT",
+                    "MATICUSDT"
+                ],
+                "perpetual": [
+                    "BTCUSDT",
+                    "ETHUSDT",
+                    "SOLUSDT"
+                ],
+                "futures": [
+                    "BTC-29DEC23",
+                    "ETH-29DEC23"
+                ]
+            },
+            "instrument_types": ["SPOT", "PERPETUAL", "FUTURES"],
+            "reconnect_interval_ms": 5000,
+            "heartbeat_interval_ms": 20000,
+            "rate_limits": {
+                "ws_connections_per_ip": 20,
+                "messages_per_second": 100
+            }
+        }
+    ],
+    "symbol_mappings": {
+        "BTC": {
+            "OKX": "BTC-USDT",
+            "BINANCE": "BTCUSDT",
+            "BYBIT": "BTCUSDT"
+        },
+        "ETH": {
+            "OKX": "ETH-USDT",
+            "BINANCE": "ETHUSDT",
+            "BYBIT": "ETHUSDT"
+        },
+        "SOL": {
+            "OKX": "SOL-USDT",
+            "BINANCE": "SOLUSDT",
+            "BYBIT": "SOLUSDT"
+        }
+    },
+    "trading_fees": {
+        "OKX": {
+            "maker": 0.0002,
+            "taker": 0.0004
+        },
+        "BINANCE": {
+            "maker": 0.0002,
+            "taker": 0.0004
+        },
+        "BYBIT": {
+            "maker": 0.0001,
+            "taker": 0.0006
+        }
+    }
+}
