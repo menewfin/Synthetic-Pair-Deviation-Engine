@@ -100,7 +100,7 @@ endif()
 
 # Tests
 enable_testing()
-add_subdirectory(tests)
+# add_subdirectory(tests)  # Tests directory doesn't exist yet
 
 # Installation
 install(TARGETS arbitrage_engine DESTINATION bin)

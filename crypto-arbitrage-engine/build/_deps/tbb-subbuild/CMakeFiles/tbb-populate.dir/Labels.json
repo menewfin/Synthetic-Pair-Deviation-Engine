@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/workspace/crypto-arbitrage-engine/build/_deps/tbb-subbuild/CMakeFiles/tbb-populate"
+		},
+		{
+			"file" : "/workspace/crypto-arbitrage-engine/build/_deps/tbb-subbuild/CMakeFiles/tbb-populate.rule"
+		},
+		{
+			"file" : "/workspace/crypto-arbitrage-engine/build/_deps/tbb-subbuild/CMakeFiles/tbb-populate-complete.rule"
+		},
+		{
+			"file" : "/workspace/crypto-arbitrage-engine/build/_deps/tbb-subbuild/tbb-populate-prefix/src/tbb-populate-stamp/tbb-populate-build.rule"
+		},
+		{
+			"file" : "/workspace/crypto-arbitrage-engine/build/_deps/tbb-subbuild/tbb-populate-prefix/src/tbb-populate-stamp/tbb-populate-configure.rule"
+		},
+		{
+			"file" : "/workspace/crypto-arbitrage-engine/build/_deps/tbb-subbuild/tbb-populate-prefix/src/tbb-populate-stamp/tbb-populate-download.rule"
+		},
+		{
+			"file" : "/workspace/crypto-arbitrage-engine/build/_deps/tbb-subbuild/tbb-populate-prefix/src/tbb-populate-stamp/tbb-populate-install.rule"
+		},
+		{
+			"file" : "/workspace/crypto-arbitrage-engine/build/_deps/tbb-subbuild/tbb-populate-prefix/src/tbb-populate-stamp/tbb-populate-mkdir.rule"
+		},
+		{
+			"file" : "/workspace/crypto-arbitrage-engine/build/_deps/tbb-subbuild/tbb-populate-prefix/src/tbb-populate-stamp/tbb-populate-patch.rule"
+		},
+		{
+			"file" : "/workspace/crypto-arbitrage-engine/build/_deps/tbb-subbuild/tbb-populate-prefix/src/tbb-populate-stamp/tbb-populate-test.rule"
+		},
+		{
+			"file" : "/workspace/crypto-arbitrage-engine/build/_deps/tbb-subbuild/tbb-populate-prefix/src/tbb-populate-stamp/tbb-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"tbb-populate"
+		],
+		"name" : "tbb-populate"
+	}
+}

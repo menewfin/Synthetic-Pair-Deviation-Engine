@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../clang_20.1_cxx20_64_release/lib_test_malloc_lib_unload.a CMakeFiles/_test_malloc_lib_unload.dir/tbbmalloc/test_malloc_lib_unload.cpp.o
+/usr/bin/ranlib ../../../clang_20.1_cxx20_64_release/lib_test_malloc_lib_unload.a

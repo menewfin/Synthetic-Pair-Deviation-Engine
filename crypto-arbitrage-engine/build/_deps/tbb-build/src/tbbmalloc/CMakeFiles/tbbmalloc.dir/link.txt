@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../clang_20.1_cxx20_64_release/libtbbmalloc.a CMakeFiles/tbbmalloc.dir/backend.cpp.o CMakeFiles/tbbmalloc.dir/backref.cpp.o CMakeFiles/tbbmalloc.dir/frontend.cpp.o CMakeFiles/tbbmalloc.dir/large_objects.cpp.o CMakeFiles/tbbmalloc.dir/tbbmalloc.cpp.o CMakeFiles/tbbmalloc.dir/__/tbb/itt_notify.cpp.o
+/usr/bin/ranlib ../../../../clang_20.1_cxx20_64_release/libtbbmalloc.a

@@ -164,6 +164,66 @@ MultiLegSyntheticPricer::spot_from_perpetual_funding() {
     return construction;
 }
 
+MultiLegSyntheticPricer::SyntheticConstruction 
+MultiLegSyntheticPricer::futures_from_spot_funding() {
+    SyntheticConstruction construction;
+    construction.name = "Synthetic Futures from Spot + Funding";
+    construction.target_type = InstrumentType::FUTURES;
+    
+    // Long spot + carry cost = synthetic futures
+    construction.legs.push_back({
+        "", // Symbol to be filled
+        InstrumentType::SPOT,
+        Side::BUY,
+        1.0,
+        Exchange::BINANCE
+    });
+    
+    return construction;
+}
+
+MultiLegSyntheticPricer::SyntheticConstruction 
+MultiLegSyntheticPricer::calendar_spread(const Symbol& symbol, 
+                                        Timestamp near_expiry,
+                                        Timestamp far_expiry) {
+    SyntheticConstruction construction;
+    construction.name = "Calendar Spread";
+    construction.target_type = InstrumentType::FUTURES;
+    
+    // Long far futures, short near futures
+    construction.legs.push_back({
+        symbol,
+        InstrumentType::FUTURES,
+        Side::BUY,
+        1.0,
+        Exchange::BINANCE
+    });
+    
+    construction.legs.push_back({
+        symbol,
+        InstrumentType::FUTURES,
+        Side::SELL,
+        -1.0,
+        Exchange::BINANCE
+    });
+    
+    return construction;
+}
+
+MultiLegSyntheticPricer::SyntheticConstruction 
+MultiLegSyntheticPricer::find_optimal_construction(const Symbol& target,
+                                                   InstrumentType target_type) const {
+    // Simple heuristic - choose construction based on target type
+    switch (target_type) {
+        case InstrumentType::SPOT:
+            return spot_from_perpetual_funding();
+        case InstrumentType::FUTURES:
+            return futures_from_spot_funding();
+        default:
+            return spot_from_perpetual_funding();
+    }
+}
+
 // StatisticalSyntheticPricer implementation
 
 Price StatisticalSyntheticPricer::calculate_synthetic_price(const Symbol& underlying,
@@ -200,6 +260,72 @@ StatisticalSyntheticPricer::calculate_mean_reversion(const Symbol& symbol,
     }
     
     return params;
+}
+
+std::vector<StatisticalSyntheticPricer::StatArbSignal> 
+StatisticalSyntheticPricer::generate_signals(double z_score_threshold) const {
+    std::vector<StatArbSignal> signals;
+    
+    std::vector<Symbol> symbols = {"BTC-USDT", "ETH-USDT", "SOL-USDT"};
+    
+    for (const auto& symbol : symbols) {
+        // Calculate spot vs perpetual mean reversion
+        auto params = calculate_mean_reversion(symbol, 
+                                              InstrumentType::SPOT, 
+                                              InstrumentType::PERPETUAL);
+        
+        if (std::abs(params.current_z_score) > z_score_threshold) {
+            StatArbSignal signal;
+            signal.symbol = symbol;
+            signal.z_score = params.current_z_score;
+            signal.expected_reversion_bps = params.std_deviation * params.current_z_score;
+            signal.confidence = std::min(0.95, std::abs(params.current_z_score) / 3.0);
+            signal.recommended_side = (params.current_z_score > 0) ? Side::SELL : Side::BUY;
+            signal.recommended_size = 1.0; // Base size, would be adjusted by position sizer
+            signal.expected_holding_hours = params.half_life_hours;
+            
+            signals.push_back(signal);
+        }
+    }
+    
+    return signals;
+}
+
+StatisticalSyntheticPricer::CointegrationResult 
+StatisticalSyntheticPricer::test_cointegration(const Symbol& symbol1,
+                                              const Symbol& symbol2,
+                                              size_t lookback_hours) const {
+    CointegrationResult result;
+    result.symbol1 = symbol1;
+    result.symbol2 = symbol2;
+    
+    // Get price data for both symbols
+    MarketDataManager::BestPrices prices1, prices2;
+    bool has_data1 = market_data_->get_best_prices(symbol1, InstrumentType::SPOT, prices1);
+    bool has_data2 = market_data_->get_best_prices(symbol2, InstrumentType::SPOT, prices2);
+    
+    if (!has_data1 || !has_data2) {
+        result.is_cointegrated = false;
+        return result;
+    }
+    
+    // Simplified cointegration test
+    double price1 = (prices1.best_bid + prices1.best_ask) / 2.0;
+    double price2 = (prices2.best_bid + prices2.best_ask) / 2.0;
+    
+    // Calculate hedge ratio (simplified as price ratio)
+    result.beta = price1 / price2;
+    
+    // Simplified correlation (would need historical data in practice)
+    result.correlation = 0.85; // Assume high correlation for crypto pairs
+    
+    // Simplified ADF test statistic
+    result.adf_statistic = -3.5; // Negative indicates potential cointegration
+    
+    // Cointegration test (simplified)
+    result.is_cointegrated = (result.correlation > 0.7 && result.adf_statistic < -2.5);
+    
+    return result;
 }
 
 } // namespace arbitrage

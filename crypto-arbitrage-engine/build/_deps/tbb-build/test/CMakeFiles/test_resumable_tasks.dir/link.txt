@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -Wpedantic -O3 -march=native -mavx2 -mfma -O3 -DNDEBUG -DNDEBUG -rdynamic -Xlinker --dependency-file=CMakeFiles/test_resumable_tasks.dir/link.d CMakeFiles/test_resumable_tasks.dir/tbb/test_resumable_tasks.cpp.o -o ../../../clang_20.1_cxx20_64_release/test_resumable_tasks  ../../../clang_20.1_cxx20_64_release/libtbb.a -ldl

@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -Wpedantic -O3 -march=native -mavx2 -mfma -O3 -DNDEBUG -DNDEBUG -rdynamic -Xlinker --dependency-file=CMakeFiles/test_malloc_compliance.dir/link.d CMakeFiles/test_malloc_compliance.dir/tbbmalloc/test_malloc_compliance.cpp.o -o ../../../clang_20.1_cxx20_64_release/test_malloc_compliance  ../../../clang_20.1_cxx20_64_release/libtbbmalloc.a -ldl

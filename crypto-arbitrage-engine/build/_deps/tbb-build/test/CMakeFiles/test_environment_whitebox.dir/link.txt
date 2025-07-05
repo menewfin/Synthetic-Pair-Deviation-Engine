@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -Wpedantic -O3 -march=native -mavx2 -mfma -O3 -DNDEBUG -DNDEBUG -rdynamic -Xlinker --dependency-file=CMakeFiles/test_environment_whitebox.dir/link.d CMakeFiles/test_environment_whitebox.dir/tbb/test_environment_whitebox.cpp.o -o ../../../clang_20.1_cxx20_64_release/test_environment_whitebox  ../../../clang_20.1_cxx20_64_release/libtbb.a -ldl

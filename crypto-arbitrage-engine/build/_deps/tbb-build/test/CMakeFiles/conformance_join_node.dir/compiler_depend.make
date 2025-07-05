@@ -1,0 +1,2 @@
+# Empty compiler generated dependencies file for conformance_join_node.
+# This may be replaced when dependencies are built.

@@ -1,0 +1,14 @@
+# Target labels
+ websocketpp-populate
+# Source files and their labels
+/workspace/crypto-arbitrage-engine/build/_deps/websocketpp-subbuild/CMakeFiles/websocketpp-populate
+/workspace/crypto-arbitrage-engine/build/_deps/websocketpp-subbuild/CMakeFiles/websocketpp-populate.rule
+/workspace/crypto-arbitrage-engine/build/_deps/websocketpp-subbuild/CMakeFiles/websocketpp-populate-complete.rule
+/workspace/crypto-arbitrage-engine/build/_deps/websocketpp-subbuild/websocketpp-populate-prefix/src/websocketpp-populate-stamp/websocketpp-populate-build.rule
+/workspace/crypto-arbitrage-engine/build/_deps/websocketpp-subbuild/websocketpp-populate-prefix/src/websocketpp-populate-stamp/websocketpp-populate-configure.rule
+/workspace/crypto-arbitrage-engine/build/_deps/websocketpp-subbuild/websocketpp-populate-prefix/src/websocketpp-populate-stamp/websocketpp-populate-download.rule
+/workspace/crypto-arbitrage-engine/build/_deps/websocketpp-subbuild/websocketpp-populate-prefix/src/websocketpp-populate-stamp/websocketpp-populate-install.rule
+/workspace/crypto-arbitrage-engine/build/_deps/websocketpp-subbuild/websocketpp-populate-prefix/src/websocketpp-populate-stamp/websocketpp-populate-mkdir.rule
+/workspace/crypto-arbitrage-engine/build/_deps/websocketpp-subbuild/websocketpp-populate-prefix/src/websocketpp-populate-stamp/websocketpp-populate-patch.rule
+/workspace/crypto-arbitrage-engine/build/_deps/websocketpp-subbuild/websocketpp-populate-prefix/src/websocketpp-populate-stamp/websocketpp-populate-test.rule
+/workspace/crypto-arbitrage-engine/build/_deps/websocketpp-subbuild/websocketpp-populate-prefix/src/websocketpp-populate-stamp/websocketpp-populate-update.rule

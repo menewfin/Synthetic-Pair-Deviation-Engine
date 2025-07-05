@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -Wpedantic -O3 -march=native -mavx2 -mfma -O3 -DNDEBUG -DNDEBUG -rdynamic -Xlinker --dependency-file=CMakeFiles/test_flow_graph_whitebox.dir/link.d CMakeFiles/test_flow_graph_whitebox.dir/tbb/test_flow_graph_whitebox.cpp.o -o ../../../clang_20.1_cxx20_64_release/test_flow_graph_whitebox  ../../../clang_20.1_cxx20_64_release/libtbb.a -ldl

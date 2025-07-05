@@ -1,0 +1,14 @@
+# Target labels
+ rapidjson-populate
+# Source files and their labels
+/workspace/crypto-arbitrage-engine/build/_deps/rapidjson-subbuild/CMakeFiles/rapidjson-populate
+/workspace/crypto-arbitrage-engine/build/_deps/rapidjson-subbuild/CMakeFiles/rapidjson-populate.rule
+/workspace/crypto-arbitrage-engine/build/_deps/rapidjson-subbuild/CMakeFiles/rapidjson-populate-complete.rule
+/workspace/crypto-arbitrage-engine/build/_deps/rapidjson-subbuild/rapidjson-populate-prefix/src/rapidjson-populate-stamp/rapidjson-populate-build.rule
+/workspace/crypto-arbitrage-engine/build/_deps/rapidjson-subbuild/rapidjson-populate-prefix/src/rapidjson-populate-stamp/rapidjson-populate-configure.rule
+/workspace/crypto-arbitrage-engine/build/_deps/rapidjson-subbuild/rapidjson-populate-prefix/src/rapidjson-populate-stamp/rapidjson-populate-download.rule
+/workspace/crypto-arbitrage-engine/build/_deps/rapidjson-subbuild/rapidjson-populate-prefix/src/rapidjson-populate-stamp/rapidjson-populate-install.rule
+/workspace/crypto-arbitrage-engine/build/_deps/rapidjson-subbuild/rapidjson-populate-prefix/src/rapidjson-populate-stamp/rapidjson-populate-mkdir.rule
+/workspace/crypto-arbitrage-engine/build/_deps/rapidjson-subbuild/rapidjson-populate-prefix/src/rapidjson-populate-stamp/rapidjson-populate-patch.rule
+/workspace/crypto-arbitrage-engine/build/_deps/rapidjson-subbuild/rapidjson-populate-prefix/src/rapidjson-populate-stamp/rapidjson-populate-test.rule
+/workspace/crypto-arbitrage-engine/build/_deps/rapidjson-subbuild/rapidjson-populate-prefix/src/rapidjson-populate-stamp/rapidjson-populate-update.rule

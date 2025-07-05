@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -Wpedantic -O3 -march=native -mavx2 -mfma -O3 -DNDEBUG -DNDEBUG -rdynamic -Xlinker --dependency-file=CMakeFiles/test_scalable_allocator.dir/link.d CMakeFiles/test_scalable_allocator.dir/tbbmalloc/test_scalable_allocator.cpp.o -o ../../../clang_20.1_cxx20_64_release/test_scalable_allocator  ../../../clang_20.1_cxx20_64_release/libtbbmalloc.a -ldl

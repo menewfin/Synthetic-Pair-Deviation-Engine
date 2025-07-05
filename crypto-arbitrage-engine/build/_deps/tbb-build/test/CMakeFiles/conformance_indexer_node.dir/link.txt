@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -Wpedantic -O3 -march=native -mavx2 -mfma -O3 -DNDEBUG -DNDEBUG -rdynamic -Xlinker --dependency-file=CMakeFiles/conformance_indexer_node.dir/link.d CMakeFiles/conformance_indexer_node.dir/conformance/conformance_indexer_node.cpp.o -o ../../../clang_20.1_cxx20_64_release/conformance_indexer_node  ../../../clang_20.1_cxx20_64_release/libtbb.a -ldl
